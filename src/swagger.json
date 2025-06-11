@@ -8,5 +8,47 @@
       "name": "Lucas Duarte Barbosa",
       "email": "lucas.duartebarbosa@outlook.com"
     }
+  },
+  "paths": {
+    "/roles": {
+      "post": {
+        "tags": ["Role"],
+        "summary": "Create a new role",
+        "description": "This endpoint allows you to create a new role in the system.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "The name of the role to be created."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Role created successfully"
+          },
+          "400": {
+            "description": "Role already exists"
+          }
+        }
+      },
+      "get":{
+        "tags":["Role"],
+        "summary": "Get all roles",
+        "description": "Returns all roles paginated.",
+        "responses": {
+            "200": {
+                "description": "Success"
+            }
+        }
+      }
+    }
   }
 }
